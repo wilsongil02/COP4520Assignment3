@@ -13,9 +13,11 @@ class Node {
     }
 }
 
+// linkedList used to store chain of presents
 class LinkedList {
     Node head;
 
+    // adds present to chain & removes from unordered bag
     public synchronized void add(int data) 
     {
         if (head == null) {
@@ -45,6 +47,7 @@ class LinkedList {
         curr.next = new Node(data);
     }
 
+    // removes present from chain & writes "thank you" letter
     public synchronized Node remove() {
 
         if (head == null) {
@@ -58,6 +61,7 @@ class LinkedList {
         return temp;
     }
 
+    // checks if a present with given id is in chain
     public synchronized boolean check(int data) {
         if (head == null) {
             return false;
@@ -231,11 +235,11 @@ class Sensor extends Thread
 public class Assignment3 
 {
     public static void main(String[] args) {
+        // problem 1
         int numServants = 4;
         Servant[] servants = new Servant[numServants];
 
-        long startT = System.currentTimeMillis();
-
+        
         for (int i = 0; i < numServants; i++) {
             servants[i] = new Servant();
             servants[i].start();
@@ -249,10 +253,10 @@ public class Assignment3
             }
         }
 
-        long endT = System.currentTimeMillis();
 
-        System.out.println("Time: " + (endT - startT) + " ms");
+        System.out.println("Both unordered bag & chain of presents are empty");
 
+        // problem 2
         int numSensors = 8;
         Sensor[] sensors = new Sensor[8];
 
