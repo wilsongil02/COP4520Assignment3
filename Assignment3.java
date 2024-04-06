@@ -258,7 +258,7 @@ public class Assignment3
 
         // problem 2
         int numSensors = 8;
-        Sensor[] sensors = new Sensor[8];
+        Sensor[] sensors = new Sensor[numSensors];
 
         for (int i = 0; i < numSensors; i++) {
             sensors[i] = new Sensor();
